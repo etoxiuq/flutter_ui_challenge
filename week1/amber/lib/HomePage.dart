@@ -1,3 +1,4 @@
+import 'package:amber/components/TopContent.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,19 @@ class Content extends StatefulWidget {
 class _ContentState extends State<Content> {
   @override
   Widget build(BuildContext context) {
-    return Container(color: Colors.white);
+    final double statusBarHeight = MediaQuery
+        .of(context)
+        .padding
+        .top;
+
+    return Container(
+        child: Column(
+          children: <Widget>[
+            Padding(padding: EdgeInsets.only(top: statusBarHeight)),
+            TopContent()
+          ]
+          ,
+        )
+    );
   }
 }
-
