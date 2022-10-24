@@ -14,6 +14,11 @@ class _ListScreenState extends State<ListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(),
+      body: Column(
+        children: [
+          SearchBar()
+        ],
+      ),
     );
   }
 }
