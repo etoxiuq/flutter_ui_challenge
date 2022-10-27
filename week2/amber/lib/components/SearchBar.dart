@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class SearchBar extends StatefulWidget {
   const SearchBar({Key? key}) : super(key: key);
@@ -9,6 +10,14 @@ class SearchBar extends StatefulWidget {
 
 class _SearchBarState extends State<SearchBar> {
   var keyword = "";
+
+  void onTextChanged(String text) {
+    keyword = text;
+  }
+
+  void onSearch() {
+    Fluttertoast.showToast(msg: "Search $keyword");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,16 +34,21 @@ class _SearchBarState extends State<SearchBar> {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(30))),
               child: Row(
-                children: const [
+                children: [
                   SizedBox(
-                    width: 16,
+                    width: 8,
                   ),
-                  Icon(Icons.search),
+                  IconButton(
+                    padding: EdgeInsets.zero,
+                    icon: Icon(Icons.search),
+                    onPressed: onSearch,
+                  ),
                   SizedBox(
                     width: 8,
                   ),
                   Expanded(
                       child: TextField(
+                    onChanged: onTextChanged,
                     decoration: InputDecoration(
                         border: InputBorder.none, hintText: "Search School"),
                   )),

@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:week2/model/School.dart';
 
+import 'package:fluttertoast/fluttertoast.dart';
+
 class ListItem extends StatelessWidget {
   const ListItem(this.school, {Key? key}) : super(key: key);
 
   final School school;
+
+  void onPressed() {
+    Fluttertoast.showToast(msg: "clicked ${school.name}");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +19,9 @@ class ListItem extends StatelessWidget {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(16))),
         elevation: 0,
-        child: Container(
+        child: InkWell(
+          onTap: onPressed,
+            child: Container(
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,7 +38,9 @@ class ListItem extends StatelessWidget {
                     Icons.stadium,
                     color: Colors.pinkAccent,
                   )),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -40,15 +50,19 @@ class ListItem extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         color: Colors.deepPurple.shade400),
                   ),
-                  SizedBox(height: 6,),
+                  SizedBox(
+                    height: 6,
+                  ),
                   IconText(Icons.location_pin, school.location),
-                  SizedBox(height: 6,),
+                  SizedBox(
+                    height: 6,
+                  ),
                   IconText(Icons.school, school.category),
                 ],
               )
             ],
           ),
-        ));
+        )));
   }
 }
 
