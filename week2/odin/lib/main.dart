@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'components/HeaderTile.dart';
+import 'model/DummyData.dart';
+import 'components/ItemTile.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:study_ui_challenge/Week2/model/ListModel.dart';
+import 'package:study_ui_challenge/model/ListModel.dart';
 
 class ItemTile extends StatelessWidget {
   const ItemTile(this._items, {super.key});

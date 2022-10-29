@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:study_ui_challenge/Week2/model/DummyData.dart';
+import 'DummyData.dart';
 
 class Items {
   final IconData icon;

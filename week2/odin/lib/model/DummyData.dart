@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:study_ui_challenge/Week2/model/ListModel.dart';
+import 'ListModel.dart';
 
 final List<Items> dummyList = <Items>[
   Items(Icons.location_on, "서울대학교", "서울특별시 소재", EducationType.university),
