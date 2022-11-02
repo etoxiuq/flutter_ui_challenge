@@ -17,6 +17,47 @@ class _MainScreenState extends State<MainScreen> {
     var date = DateFormat("MMM dd, yyyy").format(new DateTime.now());
     return Scaffold(
       appBar: TodoAppBar(),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        color: primary,
+        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 32,
+              ),
+              Icon(
+                Icons.account_circle,
+                color: onPrimary,
+                size: 48,
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              Text(
+                "Hello, Jane.",
+                style: TextStyle(color: onPrimary, fontSize: 30),
+              ),
+              SizedBox(
+                height: 8,
+              ),
+              Text(
+                "Looks like feel good.\nYou have 3 tasks to do today.",
+                style: TextStyle(color: onPrimary),
+              ),
+              SizedBox(
+                height: 32,
+              ),
+              Text(
+                "TODAY : $date",
+                style: TextStyle(color: onPrimary),
+              )
+            ],
+          )
+        ]),
+      ),
     );
   }
 }
