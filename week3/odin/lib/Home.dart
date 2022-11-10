@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:study_ui_challenge/CardItemModel.dart';
+import 'package:study_ui_challenge/model/CardItemModel.dart';
 
 class Home extends StatefulWidget {
   @override
